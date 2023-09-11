@@ -1,0 +1,54 @@
+<body>
+    
+
+    <div class="container">
+    
+    
+        <div class="card text-center mx-2">
+            <div class="card-header bg-dark text-white">
+                <b>Ya tenes cuenta?</b>
+            </div>
+    
+            <div class="card-body p-4 bg-light">
+    
+                <label style="float: left">Email</label>
+                <input type="email" class="form-control m-2" placeholder="Email" [(ngModel)]="usuarioIngreso">
+    
+                <label style="float: left">Password</label>
+                <input type="password" class="form-control m-2" placeholder="Password" [(ngModel)]="passwordIngreso">
+    
+                <button type="button" class="btn btn-success m-2" (click)="ingresarUsuario()">Ingresar</button><br/>
+                <p class="text-danger">{{mensajeIngreso}}</p>
+            </div>
+        
+        </div>
+    
+        <div class="card text-center mx-2">
+            <div class="card-header bg-dark text-white">
+                <b>Aun no estas registrado?</b>
+            </div>
+    
+            <div class="card-body p-4 bg-light">
+    
+                <label style="float: left">Email</label>
+                <input type="email" class="form-control m-2" placeholder="Email" [(ngModel)]="usuario">
+    
+                <label style="float: left">Password</label>
+                <input type="password" class="form-control m-2" placeholder="Password" [(ngModel)]="password">
+    
+                <button type="button" class="btn btn-primary m-2" (click)="registrarUsuario()">Registrarme</button><br/>
+                <p class="text-danger" >{{mensajeRegistro}}</p>
+    
+            </div>
+    
+            
+            
+        
+        
+        </div>
+    
+    
+    
+    
+    </div>
+    </body>

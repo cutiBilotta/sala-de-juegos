@@ -1,0 +1,21 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../../assets/img/91657.jpg);
+    background-size: 100%;
+}
+
+h1,h2{
+    margin-top: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+  }

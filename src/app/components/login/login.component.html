@@ -11,8 +11,8 @@
     
             <div class="card-body p-4 bg-light">
     
-                <label style="float: left">Email</label>
-                <input type="email" class="form-control m-2" placeholder="Email" [(ngModel)]="usuarioIngreso">
+                <label style="float: left">Usuario</label>
+                <input type="email" class="form-control m-2" placeholder="Usuario" [(ngModel)]="usuarioIngreso">
     
                 <label style="float: left">Password</label>
                 <input type="password" class="form-control m-2" placeholder="Password" [(ngModel)]="passwordIngreso">
@@ -30,10 +30,14 @@
     
             <div class="card-body p-4 bg-light">
     
-                <label style="float: left">Email</label>
-                <input type="email" class="form-control m-2" placeholder="Email" [(ngModel)]="usuario">
+                <label style="float: left">Usuario&nbsp;&nbsp;&nbsp;</label>
+                <small style="float: left" class="text-muted">(1-8 caracteres)</small>
+
+                <input type="email" class="form-control m-2" placeholder="Usuario" [(ngModel)]="usuario">
     
-                <label style="float: left">Password</label>
+                <label style="float: left">Password&nbsp;&nbsp;&nbsp;</label>
+                <small style="float: left" class="text-muted">(1-8 caracteres)</small>
+
                 <input type="password" class="form-control m-2" placeholder="Password" [(ngModel)]="password">
     
                 <button type="button" class="btn btn-primary m-2" (click)="registrarUsuario()">Registrarme</button><br/>

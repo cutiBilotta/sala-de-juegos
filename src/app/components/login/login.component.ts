@@ -28,38 +28,31 @@ export class LoginComponent {
 
     const nuevoUsuario = new Usuario(this.usuario, this.password);
 
+    console.log("ACA");
     if (nuevoUsuario.validarCadena(this.usuario) && nuevoUsuario.validarCadena(this.password)){
 
       if(this.verificarUsuarioExistente(nuevoUsuario)){
-        this.mensajeRegistro= "Ustes ya está registrado";
+        this.mensajeRegistro= "Usted ya está registrado";
       
       }else{
 
           if (localStorage.getItem('usuarios')!= null){
             
-            let array:Usuario[] = [];
-
             let usuariosStr = localStorage.getItem('usuarios');   
-            let usuariosObj = usuariosStr ? JSON.parse(usuariosStr) :[] ;   
+            let array : Usuario[]= usuariosStr ? JSON.parse(usuariosStr) :[] ;   
 
-            for(let i =0 ; i< usuariosObj.length ; i++){
-              if(array.length==0){
-                array[0] = usuariosObj[0];
-              }else{
-                array.push(usuariosObj[i]);
-              }
-            }
             array.push(nuevoUsuario);
-
             localStorage.setItem('usuarios', JSON.stringify(array));  
-            console.log("usuario agregado");
-
             this.router.navigate(['/home']); 
           
           }
           else{
-            localStorage.setItem('usuarios',JSON.stringify(nuevoUsuario));
-            console.log("usuario agregado");
+            let array : Usuario[] = []
+
+            array.push(nuevoUsuario);
+            array.push(nuevoUsuario);
+
+            localStorage.setItem('usuarios',JSON.stringify(array));
             this.router.navigate(['/home']); 
           }
         }
@@ -73,49 +66,44 @@ export class LoginComponent {
   
   ingresarUsuario(): void {
     const nuevoUsuario = new Usuario(this.usuarioIngreso, this.passwordIngreso);
+    
     if(this.verificarUsuarioExistente(nuevoUsuario)){
       if(this.verificarContraseñaCorrecta(nuevoUsuario)){
         this.router.navigate(['/home']); 
-
       }else{
         this.mensajeIngreso= "Contraseña incorrecta";
 
       }
-
-    }
-    else{
-      this.mensajeIngreso= "El usuario debe registrarse";
-
+    }else{
+      this.mensajeIngreso= "Usted debe registrarse";
     }
   }
 
   verificarUsuarioExistente(user: Usuario): boolean {
     let usuariosRegistrados = localStorage.getItem('usuarios');
     let array: Usuario[] = usuariosRegistrados ? JSON.parse(usuariosRegistrados) : [];
-  
-    for (let u of array) {
-      if (u.nombre === user.nombre) {
-        return true;
+
+    for(let u in array){
+
+      if(user.nombre == array[u].nombre){
+          return true;
       }
     }
-  
     return false;
-  }
+   }
+  
+  
 
   verificarContraseñaCorrecta(user: Usuario): boolean {
     let usuariosRegistrados = localStorage.getItem('usuarios');
     let array: Usuario[] = usuariosRegistrados ? JSON.parse(usuariosRegistrados) : [];
-  
-    for (let u of array) {
-      if (u.nombre === user.nombre && u.contraseña==user.contraseña) {
-        return true;
-      }
-    }
-  
+
+    for(let u in array){
+      if(user.nombre == array[u].nombre && user.contraseña == array[u].contraseña){
+          return true;
+        }
+      }     
     return false;
   }
-
-
-
 
 }

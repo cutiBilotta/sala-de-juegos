@@ -12,47 +12,25 @@
             <div class="card-body p-4 bg-light">
     
                 <label style="float: left">Usuario</label>
-                <input type="email" class="form-control m-2" placeholder="Usuario" [(ngModel)]="usuarioIngreso">
+                <input type="email" class="form-control m-2" placeholder="Email" [(ngModel)]="usuario.email" >
     
                 <label style="float: left">Password</label>
-                <input type="password" class="form-control m-2" placeholder="Password" [(ngModel)]="passwordIngreso">
+                <input type="password" class="form-control m-2" placeholder="Password" [(ngModel)]="usuario.password"  >
     
-                <button type="button" class="btn btn-success m-2" (click)="ingresarUsuario()">Ingresar</button><br/>
-                <p class="text-danger">{{mensajeIngreso}}</p>
-            </div>
-        
-        </div>
-    
-        <div class="card text-center mx-2">
-            <div class="card-header bg-dark text-white">
-                <b>Aun no estas registrado?</b>
-            </div>
-    
-            <div class="card-body p-4 bg-light">
-    
-                <label style="float: left">Usuario&nbsp;&nbsp;&nbsp;</label>
-                <small style="float: left" class="text-muted">(1-8 caracteres)</small>
+                <button type="button" class="btn btn-success m-2" (click)="Ingresar()">Ingresar</button><br/>
+                <button type="button" class="btn btn-success m-2" (click)="autocompletarUsuario()">Autocompletar</button><br/>
 
-                <input type="email" class="form-control m-2" placeholder="Usuario" [(ngModel)]="usuario">
-    
-                <label style="float: left">Password&nbsp;&nbsp;&nbsp;</label>
-                <small style="float: left" class="text-muted">(1-8 caracteres)</small>
 
-                <input type="password" class="form-control m-2" placeholder="Password" [(ngModel)]="password">
-    
-                <button type="button" class="btn btn-primary m-2" (click)="registrarUsuario()">Registrarme</button><br/>
-                <p class="text-danger" >{{mensajeRegistro}}</p>
-    
+                <p>Aun no estas registrado? <a routerLink="/registro">Registrarme</a></p>
+
+                
             </div>
-    
-            
-            
         
-        
-        </div>
-    
+        </div>   
     
     
     
     </div>
     </body>
+
+    <router-outlet></router-outlet>

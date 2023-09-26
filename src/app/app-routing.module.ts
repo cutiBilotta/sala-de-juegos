@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { QuienSoyComponent } from './components/quien-soy/quien-soy.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
   },
   {
     path: 'quien-soy', component: QuienSoyComponent,
+   
+  },
+  {
+    path: 'registro', component: RegistroComponent,
    
   },
   {

@@ -9,8 +9,18 @@ body{
 }
 
 h1{
-    margin-top: -300px;
+    margin-top: -500px;
     display:flex;
     justify-content: center;
+    align-items: center;
+}
+
+img {
+    border-radius: 50%;
+}
+
+#div-img{
+    justify-content: center;
+    text-align: center;
     align-items: center;
 }

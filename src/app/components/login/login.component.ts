@@ -10,36 +10,47 @@ import { DataBaseService } from 'src/app/services/database.service';
 })
 export class LoginComponent implements OnInit {
 
-  public mensaje :string = '';
-
+    public mensaje :string = '';
     public emailTest :string = 'test@test.com';
     public passwordTest: string = 'passTest';
-  
-  
-
-  usuario = {
-    email: '',
-    password: '',
-  }
+    usuarios: any;
+    usuario = {
+      email: '',
+      password: '',
+    }
 
   ngOnInit() {
- 
+    this.database.obtenerTodos("users").subscribe((usuariosRef) => {
+     // console.log("usuariosRef: ", usuariosRef);
+      this.usuarios = usuariosRef.map(userRef => {
+        let usuario: any = userRef.payload.doc.data();
+        usuario['id'] = userRef.payload.doc.id;
+        return usuario;
+      });
+      //console.log(this.usuarios)
+    })
   }
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private database: DataBaseService) { }
 
   Ingresar() {
     const { email, password } = this.usuario;
+
+    let lista = [...this.usuarios];
+    let existe = lista.find(user => user.email == email);
+    
+    if(existe){
     this.authService.login(email, password).then(user => {
       console.log("Bienvenido ", user);
-      if(!user) {
-        this.mensaje= ("Datos incorrectos, si no tenes cuenta registrate!");
-        return;
-      };
       this.router.navigate(['/home'])
+    
     }).catch(err=>{
-      console.log(err)
+      //console.log(err)
     })
+  }else{
+    this.mensaje= "Si no tenes cuenta registrate!";
+  }
+
   }
 
 

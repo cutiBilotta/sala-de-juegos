@@ -2,7 +2,7 @@
 
     <div class = "container">
 
-
+        <br/><br/>
         <nav class="navbar navbar-light" style="background-color: #dc3545;">
             <a class="navbar-brand" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <img src="../../../assets/img/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -29,7 +29,7 @@
             <div class="card-body">
                 <h5 class="card-title text-center">Mayor o Menor</h5>
                 <p class="card-text">Este juego consiste en desafiar al azar, el jugador debera adivinar si la carta siguiente sera mayor o menor a la actual.</p>
-                <p class="card-text"><small class="text-muted"><a href="#">Jugar ahora!</a></small></p>
+                <p class="card-text"><small class="text-muted"><a routerLink="/mayor-o-menor">Jugar ahora</a></small></p>
             </div>
             </div>
             
@@ -38,14 +38,25 @@
             <div class="card-body">
                 <h5 class="card-title text-center">Millenium</h5>
                 <p class="card-text">Desafía al cubilete! Tendras que sacar el 1 o el 5 para poder sumar puntos hasta el 1000, sino perderás una vida.</p>
-                <p class="card-text"><small class="text-muted"><a href="#">Jugar ahora</a></small></p>
+                <p class="card-text"><small class="text-muted"><a routerLink="#">Jugar ahora</a></small></p>
             </div>
             </div>
+
+            <div class="card col-md-4 mx-2 my-2">
+                <img src="../../../assets/img/hangman.jpg"  class="card-img-top" alt="dados" style="height:300px; width: 520px;" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Ahorcado</h5>
+                    <p class="card-text">Tendrás que adivinar la palabra! Tienes 5 vidas para adivinar las letras correctas</p>
+                    <p class="card-text"><small class="text-muted"><a routerLink="/ahorcado">Jugar ahora</a></small></p>
+                </div>
+                </div>
             
 
 
             
         </div>
+
+        <app-chat></app-chat>
 
         
 

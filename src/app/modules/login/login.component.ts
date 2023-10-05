@@ -10,15 +10,16 @@ import { DataBaseService } from 'src/app/services/database.service';
 })
 export class LoginComponent implements OnInit {
 
+  public usuario = {
+    email: '',
+    password: '',
+  }
+
     public mensaje :string = '';
     public emailTest :string = 'test@test.com';
     public passwordTest: string = 'passTest';
     usuarios: any;
-    usuario = {
-      email: '',
-      password: '',
-    }
-
+    
   ngOnInit() {
     this.database.obtenerTodos("users").subscribe((usuariosRef) => {
      // console.log("usuariosRef: ", usuariosRef);

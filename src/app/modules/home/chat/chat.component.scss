@@ -1,0 +1,82 @@
+.cardContainer{
+    width:300px;
+    height: 500px;
+    position: fixed;
+    right:0.5rem;
+    bottom:0.5rem;
+}
+
+
+.card-header{
+    background-color: rgb(21, 28, 78);
+    color : white;
+    font-weight: 700;
+}
+.card-body{
+    padding: 0.5rem;
+
+}
+.imgEnviar:active{
+    transform: scale(0.9);
+}
+
+.enviado{
+    display: block;
+    float: right;
+    background-color: teal;
+    color:white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+    
+}
+
+.recbido{
+    display: block;
+    float: left;
+    background-color: gray;
+    color:white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+    
+}
+
+.contenedorMensajes{
+    overflow: scroll;
+    padding: 0.3rem;
+
+}
+.contenedorMensajes::-webkit-scrollbar{
+    display: none;
+}
+
+.chatIconContainer{
+    position: fixed;
+    right:0.5rem;
+    bottom:0.5rem;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.chatIcon{
+    width: 40px;
+    height: 40px;
+}
+.closeIcon{
+    position: absolute;
+    right:0.5rem;
+    top: 0rem;
+    cursor: pointer;
+
+}
+
+.hora{
+    font-size: x-small;
+    text-decoration: none;
+}

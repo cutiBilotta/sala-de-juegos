@@ -2,17 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
 import { QuienSoyComponent } from './components/quien-soy/quien-soy.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { RegistroComponent } from './components/registro/registro.component';
-
+import { WinnerComponent } from './components/winner/winner.component';
 
 
 const firebaseConfig = {
@@ -30,11 +25,9 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    HomeComponent,
     QuienSoyComponent,
     NotFoundComponent,
-    RegistroComponent,
+    WinnerComponent,
   ],
   imports: [
     BrowserModule,

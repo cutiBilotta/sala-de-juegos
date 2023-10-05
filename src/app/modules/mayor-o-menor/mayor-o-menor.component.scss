@@ -1,0 +1,39 @@
+
+body {
+    background-image: url(../../../assets/img/5212968.jpg);
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.container {
+    text-align: center;
+}
+.card-container {
+    display: flex;
+    justify-content: center; /* Espacio entre las tarjetas */
+    align-items: center;
+}
+
+#divRdo {
+    display: flex;
+    flex-direction: column; /* Alinear elementos verticalmente */
+    justify-content: center;
+    align-items: center;
+    width: 15em;
+    height: 10em;
+    border-radius: 10px;
+    background-color: #ffc107;
+    margin: 0 auto;
+}
+
+.form-check {
+    display: flex;
+    align-items: center; /* Centrar elementos horizontalmente */
+}
+
+
+
+
+

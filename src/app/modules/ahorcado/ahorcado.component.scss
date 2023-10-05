@@ -1,0 +1,62 @@
+#container {
+    width: 500px; /* Ajusta el ancho según tus necesidades */
+    margin: 20px auto;
+  }
+
+  #keyboard {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .key {
+    width: 60px; /* Ajusta el ancho según tus necesidades */
+    height: 70px; /* Ajusta la altura según tus necesidades */
+    text-align: center;
+    line-height: 70px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .return {
+    background-color: #ddd;
+    width: 60px; /* Ajusta el ancho según tus necesidades */
+    height: 70px; /* Ajusta la altura según tus necesidades */
+    text-align: center;
+    line-height: 70px;
+    background-color: #ddd;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .key:hover {
+    background-color: #eee;
+  }
+
+  .lastitem {
+    margin-right: 0;
+  }
+  
+  
+  body {
+ 
+    background-image: url(../../../assets/img/91655.jpg);
+    width:100vw;
+    height: 100vh;
+    background-size: 100%;
+
+  }

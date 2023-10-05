@@ -1,0 +1,61 @@
+<body>
+    <div class="container">
+        <br/>
+        <h1 class="text-white">Mayor o Menor</h1><br/>
+
+
+
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                
+                <div class="card-container">
+                    <div class="card text-white bg-dark mb-3" style="width: 13rem; height:18rem;">
+                        <div class="card-body">
+                            <h1 class="card-title mt-5">{{valor}} {{figura}}</h1>
+                        </div>
+                    </div>
+
+                    <div class="card text-danger bg-dark mb-3 mx-4" style="width: 13rem; height:18rem;">
+                        <div class="card-body">
+                            <h3 class="card-title">♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦♦</h3>
+                        </div>
+                    </div>
+                </div> 
+
+                    
+            </div>
+            <div class="col order-last">
+                <div class="card border-secondary mb-3" style="max-width: 20em;"> <!-- Segunda tarjeta -->
+                    <div class="card-header text-center bg-warning">Puntos</div>
+                    <div class="card-body text-secondary bg-light">
+                        <p class="card-text text-center">{{puntos}}</p>
+                    </div>
+                </div>
+            </div>
+          </div><br/><br/>
+
+
+    <div style="background-color: #FE9A2E;" id="divRdo" > 
+        <div class="form-check ">
+            <input class="form-check-input mt-2" type="radio" value="mayor" id="rdoMayor" [(ngModel)]="opcion">
+            <label class="form-check-label mx-2" for="rdoMayor">Mayor</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input " type="radio" value="menor" id="rdoMenor"  [(ngModel)]="opcion">
+            <label class="form-check-label mx-2" for="rdoMenor">Menor</label>
+
+        </div>
+        <button type="button" class="btn btn-warning m-2 btn-outline-dark" (click)="mostrarCarta()">Mostrar Carta</button>
+
+    </div>
+
+
+      
+    
+    </div>
+</body>
+
+
+
+

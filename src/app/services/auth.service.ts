@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import firebase from 'firebase/compat/app';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,12 +28,10 @@ export class AuthService {
       const userCredential = await this.afauth.signInWithEmailAndPassword(email, password);
   
       if (!userCredential.user) {
-        return null; // Usuario no encontrado
+        return null; 
       }
-  
+
       const user = userCredential.user;
-  
-      // Registrar la fecha de ingreso sin importar si es la primera vez
       const fechaIngreso = new Date();
       await this.firestore.collection('users').doc(user.uid).set({ fechaIngreso }, { merge: true });
   
@@ -65,7 +63,11 @@ export class AuthService {
     this.afauth.signOut();
   }
 
-  getLastUser(){
-      return this.firestore.collection('users', ref => ref.orderBy('fechaRegistro', 'desc').limit(1)).valueChanges();
+  getUserEmail(): Observable<string | null> {
+    return this.getUserLogged().pipe(map((user: any) => (user ? user.email : null)));
   }
+
+  
+
+
 }

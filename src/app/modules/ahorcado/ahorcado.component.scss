@@ -60,3 +60,9 @@
     background-size: 100%;
 
   }
+
+  .disabled {
+    pointer-events: none; /* Deshabilitar eventos de puntero */
+    opacity: 0.6; /* Cambiar la opacidad para indicar que está deshabilitado */
+    cursor: not-allowed; /* Cambiar el cursor para indicar que no se puede interactuar */
+  }

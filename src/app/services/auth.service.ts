@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -42,18 +42,6 @@ export class AuthService {
     }
   }
 
-
-
-/*
-  async login(email: string, password: string) {
-    try {
-      return await this.afauth.signInWithEmailAndPassword(email, password);
-    } catch (err) {
-      console.log("error en login: ", err);
-      return null;
-    }
-  }*/
-
   getUserLogged() {
     return this.afauth.authState;
   }
@@ -63,11 +51,16 @@ export class AuthService {
     this.afauth.signOut();
   }
 
-  getUserEmail(): Observable<string | null> {
-    return this.getUserLogged().pipe(map((user: any) => (user ? user.email : null)));
+  getUserEmail() {
+    return this.afauth.authState.pipe(
+      map((user) => (user ? user.email : null))
+    );
   }
 
-  
-
+  getUserEmailByUID(uid: string) {
+    return this.firestore.collection('users').doc(uid).valueChanges().pipe(
+      map((user: any) => (user ? user.email : null))
+    );
+  }
 
 }

@@ -1,82 +1,86 @@
-.cardContainer{
-    width:300px;
+.cardContainer {
+    width: 300px;
     height: 500px;
     position: fixed;
-    right:0.5rem;
-    bottom:0.5rem;
-}
-
-
-.card-header{
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+  
+  .card-header {
     background-color: rgb(21, 28, 78);
-    color : white;
+    color: white;
     font-weight: 700;
-}
-.card-body{
+  }
+  
+  .card-body {
     padding: 0.5rem;
-
-}
-.imgEnviar:active{
+  }
+  
+  .imgEnviar:active {
     transform: scale(0.9);
-}
-
-.enviado{
+  }
+  
+  .enviado {
     display: block;
     float: right;
-    background-color: teal;
-    color:white;
+    background-color: rgb(73, 179, 149);
+    color: white;
     min-width: 50.01%;
     border-radius: 10px;
     text-align: left;
-    
-}
-
-.recbido{
+    margin: 0.5rem 0;
+    clear: both; /* Agregado para evitar superposición de mensajes */
+  }
+  
+  .recibido {
     display: block;
     float: left;
-    background-color: gray;
-    color:white;
+    background-color: rgb(125, 163, 252);
+    color: white;
     min-width: 50.01%;
     border-radius: 10px;
     text-align: left;
+    margin: 0.5rem 0;
+    clear: both; /* Agregado para evitar superposición de mensajes */
+  }
+  
+  .contenedorMensajes {
+   
+      overflow-y: auto; /* Usar "auto" para mostrar la barra de desplazamiento solo cuando sea necesario */
+      max-height: 350px; /* Ajusta la altura máxima según tus necesidades */
     
-}
-
-.contenedorMensajes{
-    overflow: scroll;
-    padding: 0.3rem;
-
-}
-.contenedorMensajes::-webkit-scrollbar{
+  }
+  
+  .contenedorMensajes::-webkit-scrollbar {
     display: none;
-}
-
-.chatIconContainer{
+  }
+  
+  .chatIconContainer {
     position: fixed;
-    right:0.5rem;
-    bottom:0.5rem;
-    display: flex;;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 60px;
     height: 60px;
     cursor: pointer;
     border-radius: 100%;
-}
-
-.chatIcon{
+  }
+  
+  .chatIcon {
     width: 40px;
     height: 40px;
-}
-.closeIcon{
+  }
+  
+  .closeIcon {
     position: absolute;
-    right:0.5rem;
+    right: 0.5rem;
     top: 0rem;
     cursor: pointer;
-
-}
-
-.hora{
+  }
+  
+  .hora {
     font-size: x-small;
     text-decoration: none;
-}
+  }

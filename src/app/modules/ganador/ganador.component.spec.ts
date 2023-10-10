@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WinnerComponent } from './winner.component';
+import { GanadorComponent } from './ganador.component';
 
-describe('WinnerComponent', () => {
-  let component: WinnerComponent;
-  let fixture: ComponentFixture<WinnerComponent>;
+describe('GanadorComponent', () => {
+  let component: GanadorComponent;
+  let fixture: ComponentFixture<GanadorComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WinnerComponent]
+      declarations: [GanadorComponent]
     });
-    fixture = TestBed.createComponent(WinnerComponent);
+    fixture = TestBed.createComponent(GanadorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

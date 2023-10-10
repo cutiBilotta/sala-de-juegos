@@ -12,26 +12,18 @@ export class HomeComponent {
 
   public userLogged: User | null = null;
   public email :string | null ="";
+  userEmail:any;
 
   constructor(private authService: AuthService, private router: Router) {}
   
 
 
   ngOnInit() {
-    this.authService.getUserEmail().subscribe(
-      (email: string | null) => {
-        this.email = email;
-        if (email !== null) {
-          console.log('Correo electrónico:', email);
-        } else {
-          console.log('Usuario no autenticado');
-        }
-      },
-      (error) => {
-        console.error('Error:', error);
-      }
-    );
+      this.authService.getUserEmail().subscribe((email) => {
+        this.userEmail = email;
+      });
   }
+  
 
   logOut(){
     this.authService.logout();
@@ -41,7 +33,7 @@ export class HomeComponent {
 
   quienSoy(){
 
-    this.router.navigate(['/quien-soy'])
+    this.router.navigate(['/quien-soy']);
 
   }
  

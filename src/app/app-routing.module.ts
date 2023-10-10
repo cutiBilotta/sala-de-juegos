@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { QuienSoyComponent } from './components/quien-soy/quien-soy.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { WinnerComponent } from './components/winner/winner.component';
-
 const routes: Routes = [
   { path: '', component: NotFoundComponent, },
   {
@@ -37,8 +35,9 @@ const routes: Routes = [
       .then(mod => mod.AhorcadoModule)
   },
   {
-    path: 'winner', component: WinnerComponent,
-   
+    path: 'millenium',
+    loadChildren: () => import('./modules/millenium/millenium.module')
+      .then(mod => mod.MilleniumModule)
   },
   {
     path: "**",

@@ -1,0 +1,110 @@
+
+<body>
+  
+
+  <div class="container">
+    <div class="row">
+      
+      <div class="col">
+        
+        <div *ngIf="partidaGanada">
+          <app-ganador></app-ganador>
+        </div>
+        <div *ngIf="partidaPerdida">
+          <app-perdedor></app-perdedor>
+        </div>
+
+      </div>
+
+
+      
+      <div class="col-6">
+
+        <br/><br/>
+        <h1 class="text-center text-light">Millenium</h1>
+        
+        <div class="imagen-container">
+          <br/>
+          <h2 class ="text-warning">{{textoInicio}}</h2>
+
+            
+            <div *ngFor="let imagen of imagenesDados" class="imagen-item"  >
+              <img [src]="imagen" alt="Imagen" width="110px">
+            </div>
+
+        </div>
+      
+      
+          <div class="card text-white bg-secondary mb-3 text-center mx-auto" style="max-width: 30rem; top:100px;" id="divCheck">
+            <div class="card-header ">Selcciona dos numeros crees que saldrán en la próxima ronda</div>
+            <div class="card-body ">
+              
+            
+            <div class="form-check form-check-inline">
+              <input class="form-check-input inputCheck" type="checkbox" id="inlineCheckbox1" value="1" >
+              <label class="form-check-label" for="inlineCheckbox1">1</label>
+            </div>
+           
+            <div class="form-check form-check-inline">
+              <input class="form-check-input inputCheck" type="checkbox" id="inlineCheckbox2" value="2">
+              <label class="form-check-label" for="inlineCheckbox2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input inputCheck" type="checkbox" id="inlineCheckbox3" value="3" >
+              <label class="form-check-label" for="inlineCheckbox3">3</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+              <input class="form-check-input inputCheck" type="checkbox" id="inlineCheckbox1" value="4">
+              <label class="form-check-label" for="inlineCheckbox1">4</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+              <input class="form-check-input inputCheck" type="checkbox" id="inlineCheckbox2" value="5">
+              <label class="form-check-label" for="inlineCheckbox2">5</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+              <input class="form-check-input inputCheck" type="checkbox" id="inlineCheckbox3" value="6" >
+              <label class="form-check-label" for="inlineCheckbox3">6</label>
+            </div>
+            <br/>
+      
+              <button   [ngClass]="{'disabled': !gameEnabled}" id="boton" type="button" class="btn btn-warning m-2 btn-outline-dark" (click)="iniciarRonda()">Tirar Dados</button>
+      
+          </div>
+      
+        </div>
+       
+      
+      
+       
+      </div>
+      
+      <div class="col">
+        <div class="card  mb-3 mx-auto" style="max-width: 12rem; top:7em;">
+          <div class="card-header text-center bg-info">Vidas</div>
+          <div class="card-body text-center">
+            <p class="card-text">{{vidasString}}</p>
+          </div>
+        </div>
+    
+        <div class="card mb-3 mx-auto" style="max-width: 12rem; top:10em;">
+          <div class="card-header text-center bg-info">Puntos</div>
+          <div class="card-body text-center">
+            <p class="card-text">{{puntos}}</p>
+          </div>
+        </div>
+      
+      
+      
+      
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+</body>

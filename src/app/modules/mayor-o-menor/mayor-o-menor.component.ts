@@ -18,6 +18,10 @@ export class MayorOMenorComponent {
   public cartaAnterior:any;
   public primerMano : boolean = true;
   public puntos : number =0;
+  partidaGanada:boolean = false;
+  partidaPerdida:boolean = false;
+  gameEnabled:boolean = true;
+
 
   ngOnInit(){
 
@@ -82,10 +86,12 @@ export class MayorOMenorComponent {
 
     this.cartaAnterior= this.cartaActual;
 
-    if(this.puntos<-50){
-     // this.router.navigate
+    if(this.puntos<0){
+     this.partidaPerdida=true;
+     this.gameEnabled=false;
     }else if(this.puntos>30){
-      this.router.navigate(['/winner']);
+      this.partidaGanada=true;
+      this.gameEnabled=false;
     }
 
 

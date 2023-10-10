@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ViewEncapsulation } from "@angular/core";
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-ahorcado',
   templateUrl: './ahorcado.component.html',
-  styleUrls: ['./ahorcado.component.scss']
+  styleUrls: ['./ahorcado.component.scss'],
+
 })
 export class AhorcadoComponent {
 
@@ -21,6 +21,10 @@ export class AhorcadoComponent {
   public vidasString : string = "❤ ❤ ❤ ❤ ❤";
   public flagLetra : boolean = false;
   public flagGuion : boolean = false;
+  public partidaGanada : boolean = false;
+  public partidaPerdida : boolean = false;
+
+  gameEnabled: boolean = true;
 
  
   ngOnInit(){
@@ -78,7 +82,8 @@ export class AhorcadoComponent {
         }
 
         if(this.flagLetra && !this.flagGuion){
-          this.router.navigate(['/winner']);
+          this.partidaGanada=true;    
+          this.gameEnabled = false;
         }
   
         this.letraSeleccionada = '';
@@ -90,10 +95,12 @@ export class AhorcadoComponent {
           for(let i=0 ; i<this.vidas; i ++){
             this.vidasString += " ❤ ";
           }
-          if(this.vidas == 0){
-
-            //ir a component loser;
+          
+          if(this.vidas==0){
+            this.partidaPerdida=true;
+            this.gameEnabled=false;
           }
+          
         }
       
 

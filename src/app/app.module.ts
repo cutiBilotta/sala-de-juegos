@@ -7,8 +7,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
-import { WinnerComponent } from './components/winner/winner.component';
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyAk-Xu0-cCyq3rR9UBcH4B_9HlK3--3rwQ",
@@ -27,7 +25,6 @@ const firebaseConfig = {
     AppComponent,
     QuienSoyComponent,
     NotFoundComponent,
-    WinnerComponent,
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,7 @@
     border-radius: 10px;
     text-align: left;
     margin: 0.5rem 0;
-    clear: both; /* Agregado para evitar superposición de mensajes */
+    clear: both; //evitar superposición de mensajes
   }
   
   .recibido {
@@ -41,13 +41,13 @@
     border-radius: 10px;
     text-align: left;
     margin: 0.5rem 0;
-    clear: both; /* Agregado para evitar superposición de mensajes */
+    clear: both; 
   }
   
   .contenedorMensajes {
    
-      overflow-y: auto; /* Usar "auto" para mostrar la barra de desplazamiento solo cuando sea necesario */
-      max-height: 350px; /* Ajusta la altura máxima según tus necesidades */
+      overflow-y: auto; 
+      max-height: 350px; 
     
   }
   

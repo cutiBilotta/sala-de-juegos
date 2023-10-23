@@ -16,6 +16,7 @@ body {
     align-items: center;
 }
 
+
 #divRdo {
     display: flex;
     flex-direction: column; /* Alinear elementos verticalmente */
@@ -32,8 +33,8 @@ body {
     display: flex;
     align-items: center; /* Centrar elementos horizontalmente */
 }
-
-
-
-
-
+.imagen-redondeada {
+    border-radius: 10px ;
+    width: 200px; 
+    height: 300px; 
+  }

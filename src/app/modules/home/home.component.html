@@ -2,7 +2,6 @@
 
     <div class = "container">
 
-        <br/><br/>
         <nav class="navbar navbar-light" style="background-color: #dc3545;">
             <a class="navbar-brand" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <img src="../../../assets/img/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -20,36 +19,67 @@
         <h1 class=" text-light">Bienvenido a la Sala de Juegos</h1>
     
         <div class="card-group ms-5 me-5 mt-3">
-        
-            
-            
-            <div class="card col-md-4 mx-2 my-2">
-                <img src="../../../assets/img/cards2.png"  alt="cartas" class="card-img-top" style="height:300px; width: 520px;" class="card-img-top">
-        
-            <div class="card-body">
-                <h5 class="card-title text-center">Mayor o Menor</h5>
-                <p class="card-text">Este juego consiste en desafiar al azar, el jugador debera adivinar si la carta siguiente sera mayor o menor a la actual.</p>
-                <p class="card-text"><small class="text-muted"><a routerLink="/mayor-o-menor">Jugar ahora</a></small></p>
-            </div>
-            </div>
-            
-            <div class="card col-md-4 mx-2 my-2">
-            <img src="../../../assets/img/3D.jpg"  class="card-img-top" alt="dados" style="height:300px; width: 520px;" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title text-center">Millenium</h5>
-                <p class="card-text">Desafía al cubilete! Tendras que sacar el 1 o el 5 para poder sumar puntos hasta el 1000, sino perderás una vida.</p>
-                <p class="card-text"><small class="text-muted"><a routerLink="/millenium">Jugar ahora</a></small></p>
-            </div>
-            </div>
+            <div class="row justify-content-center">
 
-            <div class="card col-md-4 mx-2 my-2">
-                <img src="../../../assets/img/hangman.jpg"  class="card-img-top" alt="dados" style="height:300px; width: 520px;" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Ahorcado</h5>
-                    <p class="card-text">Tendrás que adivinar la palabra! Tienes 5 vidas para adivinar las letras correctas</p>
-                    <p class="card-text"><small class="text-muted"><a routerLink="/ahorcado">Jugar ahora</a></small></p>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="../../../assets/img/ahorcado.jpg" alt="Card image cap"  style="height:16rem">
+                        <div class="card-body text-center">
+                          <h5 class="card-title">Ahorcado</h5>
+                          <p class="card-text">Adivina la palabra</p>
+                          <a routerLink="/ahorcado" class="btn btn-primary">Jugar ahora!</a>
+                        </div>
+                    </div>
                 </div>
+                
+               
+
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="../../../assets/img/preguntados.jpeg" alt="Card image cap"  style="height:16rem">
+                        <div class="card-body text-center">
+                          <h5 class="card-title">Geo Preguntados</h5>
+                          <p class="card-text">Adivina las banderas</p>
+                          <a routerLink="/preguntados" class="btn btn-primary">Jugar ahora!</a>
+                        </div>
+                    </div>
+                </div> 
+                
+            
+            <!--</div> !-->
+            
+
+            
+
+               <!-- <div class="row justify-content-center mt-3">!-->
+
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3">
+                    <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="../../../assets/img/mayorMenor.png" alt="Card image cap" style="height:16rem">
+                            <div class="card-body text-center">
+                              <h5 class="card-title">Mayor o Menor</h5>
+                              <p class="card-text">Adivina el valor de la carta</p>
+                              <a routerLink="/mayor-o-menor" class="btn btn-primary">Jugar ahora!</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-3">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="../../../assets/img/millenium.jpg" alt="Card image cap" style="height:16rem">
+                            <div class="card-body text-center">
+                              <h5 class="card-title">Millenium</h5>
+                              <p class="card-text">Adivina los numeros de los dados</p>
+                              <a routerLink="/millenium" class="btn btn-primary">Jugar ahora!</a>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    
+                
                 </div>
+
+
             
 
 

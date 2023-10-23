@@ -1,0 +1,49 @@
+body{
+    background-image: url("../../../../assets/img/91655.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: 100%;
+}
+
+.imagen-container {
+  text-align: center; /* Centra horizontalmente el contenido */
+  height: 200px;
+  margin-top: 100px;
+}
+
+.imagen-item {
+  display: inline-block; /* Hace que los elementos sean inline-block */
+  margin: 0; /* Agrega un margen horizontal entre las imágenes si lo deseas */
+}
+
+#divCheck{
+  display: flex;
+  text-align: center;
+  margin-right: 10px;
+
+}
+
+.opcion {
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.paises{
+
+  background-color: #784caa;
+
+}
+.continentes{
+
+  background-color: #3498db;
+
+}
+.opcion:hover {
+  background-color: #2980b9;
+}

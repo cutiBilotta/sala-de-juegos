@@ -4,7 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { QuienSoyComponent } from './components/quien-soy/quien-soy.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 const routes: Routes = [
-  { path: '', component: NotFoundComponent, },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'  
+  },
   {
     path: 'login',
     loadChildren: () => import('./modules/login/login.module')
@@ -38,6 +42,11 @@ const routes: Routes = [
     path: 'millenium',
     loadChildren: () => import('./modules/millenium/millenium.module')
       .then(mod => mod.MilleniumModule)
+  },
+  {
+    path: 'preguntados',
+    loadChildren: () => import('./modules/preguntados/preguntados.module')
+      .then(mod => mod.PreguntadosModule)
   },
   {
     path: "**",

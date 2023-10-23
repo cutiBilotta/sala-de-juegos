@@ -1,36 +1,26 @@
 <body>
-    
-
-    <div class="container">
-    
-    
-        <div class="card text-center mx-2">
-            <div class="card-header bg-dark text-white">
-                <b>Ya tenes cuenta?</b>
-            </div>
-    
-            <div class="card-body p-4 bg-light">
-    
-                <label style="float: left">Usuario</label>
-                <input type="email" class="form-control m-2" placeholder="Email" [(ngModel)]="usuario.email" >
-    
-                <label style="float: left">Password</label>
-                <input type="password" class="form-control m-2" placeholder="Password" [(ngModel)]="usuario.password"  >
-    
-                <button type="button" class="btn btn-success m-2" (click)="Ingresar()">Ingresar</button><br/>
-                <button type="button" class="btn btn-success m-2" (click)="autocompletarUsuario()">Autocompletar</button><br/>
-
-
-                <p class = "text-danger">{{mensaje}}</p>
-                <p>Aun no estas registrado? <a routerLink="/registro">Registrarme</a></p>
-
-                
-            </div>
-        
-        </div>   
-    
-    
-    
+<div class="container">
+    <div class="card text-center mx-2">
+      <div class="card-header bg-dark text-white">
+        <b>Ya tienes cuenta?</b>
+      </div>
+  
+      <div class="card-body p-4 bg-light">
+        <form (ngSubmit)="Ingresar()">
+          <label for="email" style="float: left">Usuario</label>
+          <input type="email" class="form-control m-2" id="email" name="email" placeholder="Email" [(ngModel)]="usuario.email" autocomplete="off">
+          
+          <label for="password" style="float: left">Password</label>
+          <input type="password" class="form-control m-2" id="password" name="password" placeholder="Password" [(ngModel)]="usuario.password" autocomplete="off">
+  
+          <button *ngIf="usuarios!= undefined && usuarios.length>0" type="submit" class="btn btn-success m-2">Ingresar</button>
+        </form>
+  
+        <button type="button" class="btn btn-success m-2" (click)="autocompletarUsuario()">Autocompletar</button>
+  
+        <p class="text-danger">{{mensaje}}</p>
+        <p>Aun no estas registrado? <a routerLink="/registro">Registrarme</a></p>
+      </div>
     </div>
-    </body>
-
+  </div>
+</body>

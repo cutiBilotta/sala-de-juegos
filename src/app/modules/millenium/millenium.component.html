@@ -71,7 +71,7 @@
             <br/>
       
               <button   [ngClass]="{'disabled': !gameEnabled}" id="boton" type="button" class="btn btn-warning m-2 btn-outline-dark" (click)="iniciarRonda()">Tirar Dados</button>
-      
+              <div><p class="text-center text-danger">{{mensajeError}}</p></div>
           </div>
       
         </div>

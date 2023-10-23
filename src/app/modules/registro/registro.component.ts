@@ -31,27 +31,29 @@ export class RegistroComponent implements OnInit {
   constructor(private authService: AuthService, private database: DataBaseService, private router: Router) { }
   
   registrarse() {
-
     const { email, password } = this.usuario;
-
+  
     let lista = [...this.usuarios];
-    let existe = lista.find(user => user.email == email);
-    if(!existe){
-    this.authService.register(email, password).then(user => {
-      console.log("se registro: ", user);
-     
-
-        console.log("USUARIO NUEVO CREADO")
-        this.database.crear('users', this.usuario);
-        this.router.navigate(['/home']);
-    }).catch(err => {
-      //console.log(err)
-    })
-  }else{
-    this.mensaje = "El usuario ya se encuentra registrado";
+    let existe = lista.find(user => user.email === email);
+  
+    if (!existe) {
+      this.authService.register(email, password).then(user => {
+        if (user !== null) {
+          console.log("se registro: ", user);
+          console.log("USUARIO NUEVO CREADO");
+          this.database.crear('users', this.usuario);
+          this.router.navigate(['/home']);
+        } else {
+          console.log("authService.register retornó null. Mostrar mensaje de error.");
+          this.mensaje="Error. Ingrese datos validos";
+        }
+      }).catch(err => {
+        console.log(err);
+      });
+    } else {
+      this.mensaje = "El usuario ya se encuentra registrado";
+    }
   }
-  }
-
 
 
 

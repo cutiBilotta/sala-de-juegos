@@ -17,7 +17,7 @@ export class AuthService {
     try {
       return await this.afauth.createUserWithEmailAndPassword(email, password);
     } catch (err) {
-      console.log("error en login: ", err);
+      console.log("error en register: ", err);
       return null;
     }
   }

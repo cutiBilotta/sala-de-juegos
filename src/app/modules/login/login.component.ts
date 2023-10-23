@@ -10,15 +10,17 @@ import { DataBaseService } from 'src/app/services/database.service';
 })
 export class LoginComponent implements OnInit {
 
+  usuarios: any;
+
   public usuario = {
     email: '',
     password: '',
+    fecha:''
   }
 
     public mensaje :string = '';
     public emailTest :string = 'test@test.com';
     public passwordTest: string = 'passTest';
-    usuarios: any;
     
   ngOnInit() {
     this.database.obtenerTodos("users").subscribe((usuariosRef) => {
@@ -36,22 +38,22 @@ export class LoginComponent implements OnInit {
 
   Ingresar() {
     const { email, password } = this.usuario;
-
     let lista = [...this.usuarios];
     let existe = lista.find(user => user.email == email);
-    
-    if(existe){
-    this.authService.login(email, password).then(user => {
-      console.log("Bienvenido ", user);
-      this.router.navigate(['/home'])
-    
-    }).catch(err=>{
-      //console.log(err)
-    })
-  }else{
-    this.mensaje= "Si no tenes cuenta registrate!";
-  }
-
+  
+    if (existe) {
+      this.authService.login(email, password).then(user => {
+        if (user !== null) {
+          this.router.navigate(['/home']);
+        } else {
+          this.mensaje="Error. Ingrese datos validos";
+        }
+      }).catch(err => {
+        console.log(err);
+      });
+    } else {
+      this.mensaje = "Si no tienes cuenta, regístrate!";
+    }
   }
 
 

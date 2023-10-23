@@ -16,9 +16,9 @@ export class AhorcadoComponent {
   public palabras :string[] = ['lavadora', 'linterna', 'derramar', 'pasaporte', 'cosquillas', 'alimentos','envasado', 'zapatos', 'dictador', 'mascota','presentacion','esmalte', 'convencion', 'cortina', 'desayuno', 'medianoche', 'burbujas'];
   public palabraSeleccionada : string ="";
   public solucion: string[]= [];
-  public vidas:number = 5;
+  public vidas:number = 4;
   public solucionString : string="";
-  public vidasString : string = "❤ ❤ ❤ ❤ ❤";
+  public vidasString : string = "❤ ❤ ❤ ❤";
   public flagLetra : boolean = false;
   public flagGuion : boolean = false;
   public partidaGanada : boolean = false;
@@ -89,6 +89,7 @@ export class AhorcadoComponent {
         this.letraSeleccionada = '';
 
         }else{
+          console.log("aca");
           this.vidasString ="";
           console.log("Esa letra no se encuentra en la palabra");
           this.vidas--;

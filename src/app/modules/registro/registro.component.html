@@ -1,32 +1,25 @@
 <body>
-    
-
     <div class="container">
-    
-    
         <div class="card text-center mx-2">
             <div class="card-header bg-dark text-white">
                 <b>Aun no estas registrado?</b>
             </div>
     
-            <div class="card-body p-4 bg-light">
+            <form (ngSubmit)="registrarse()">
+                <div class="card-body p-4 bg-light">
+                    <label style="float: left">Email <span class="text-muted">(formato email)</span> </label>
+                    <input type="email" class="form-control m-2" placeholder="Email" [(ngModel)]="usuario.email" name="email" autocomplete="off">
     
-                <label style="float: left">Email</label>
-                <input type="email" class="form-control m-2" placeholder="Email" [(ngModel)]="usuario.email">
+                    <label style="float: left">Password <span class="text-muted">(mas de 6 caracteres)</span></label>
+                    <input type="password" class="form-control m-2" placeholder="Password" [(ngModel)]="usuario.password" name="password" autocomplete="off">
     
-                <label style="float: left">Password</label>
-                <input type="password" class="form-control m-2" placeholder="Password" [(ngModel)]="usuario.password">
-    
-                <button type="button" class="btn btn-success m-2" (click)="registrarse()">Registrarme</button><br/>
-                <p class="text-danger">{{mensaje}}</p>
-            </div>
-        
+                    <button type="submit" class="btn btn-success m-2">Registrarme</button><br/>
+                    <p class="text-danger">{{mensaje}}</p>
+                </div>
+            </form>
         </div>   
-    
-    
-    
     </div>
-    </body>
+</body>
 
 
 

@@ -1,8 +1,8 @@
-<!-- chat.component.html -->
-<div *ngIf="usuarioLogeadoBool && !mostrarChat" class="chatIconContainer" (click)="mostrarChat=true" style="background-color: rgb(159, 241, 242);">
-    <img src="../../../assets/img/chat.png" alt="" class="chatIcon" >
-  </div>
-  
+
+
+<div *ngIf="usuarioLogeadoBool" class="chatIconContainer" (click)="mostrarChat = !mostrarChat" style="background-color: rgb(159, 241, 242);">
+  <img src="../../../assets/img/chat.png" alt="" class="chatIcon" >
+</div>
   <div class="card text-center cardContainer" *ngIf="usuarioLogeado && mostrarChat">
     <div class="card-header">Chat
       <div class="closeIcon" (click)="mostrarChat=false">X</div>
@@ -10,7 +10,7 @@
   
     <div class="card-body">
       <div #contenedorDeMensajes id="contenedorDeMensajes" class="contenedorMensajes h-100">
-        <p *ngFor="let mensaje of mensajes" class="msj p-2"
+          <p *ngFor="let mensaje of mensajes" class="msj p-2"
           [ngClass]="(usuarioLogeado.uid === mensaje.emisor.uid) ? 'enviado' : 'recibido'">
           <a class="hora text-muted">{{ mensaje.emisor.email }}</a>
           <br />

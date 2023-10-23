@@ -1,0 +1,92 @@
+<body>
+    <div class="container">
+
+
+        <div class="row">
+          <div class="col">
+
+
+              
+        <div *ngIf="partidaGanada">
+          <app-ganador></app-ganador>
+        </div>
+        <div *ngIf="partidaPerdida">
+          <app-perdedor></app-perdedor>
+        </div>
+          </div>
+
+
+
+          <div class="col-6">
+
+
+
+            <h1 class="text-center text-light">Geo Preguntados</h1>
+            <h3 class="text-center text-warning">{{mensajeUsuario}}</h3>
+            <br/>
+            <div class="row" *ngIf="mostrarBandera">
+              <img src="{{actualFlag}}" alt="" style="width: 30em; height: 15rem;"class="mx-auto d-block">      
+      
+            </div>
+             
+            <div *ngFor="let opcion of opcionesString" (click)="guardarRespuesta(opcion)" 
+              class="row opcion text-center mx-auto d-block border border-dark" 
+              [class.paises]="rondaPaises === true" 
+              [class.continentes]="rondaPaises === false">
+            {{ opcion }}
+            </div>
+      
+            
+            <div class="row">
+              <button *ngIf="!mostrarBandera && paises.length>0" type="button"  style="max-width: 18rem; margin-top: 150px;" class="btn btn-warning  btn-xl mx-auto d-block" (click)="comenzar()">Comenzar!</button>
+              
+              <button  [ngClass]="{'disabled': !gameEnabled}" *ngIf="mostrarBandera" type="button"  style="max-width: 18rem;" class="btn btn-warning  btn-xl mx-auto d-block" (click)="enviarRespuesta()">Listo!</button>
+      
+            </div>
+      
+
+
+          </div>
+
+
+
+          <div class="col">
+
+
+
+            <div class="card  mb-3 mx-auto" style="max-width: 12rem; top:7em;">
+              <div class="card-header text-center bg-info">Vidas</div>
+              <div class="card-body text-center">
+                <p class="card-text">{{vidasString}}</p>
+              </div>
+            </div>
+        
+            <div class="card mb-3 mx-auto" style="max-width: 12rem; top:10em;">
+              <div class="card-header text-center bg-info">Puntos</div>
+              <div class="card-body text-center">
+                <p class="card-text">{{puntos}}</p>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+
+
+      
+      
+
+
+      
+
+
+      
+     
+
+
+
+    </div>
+</body>
